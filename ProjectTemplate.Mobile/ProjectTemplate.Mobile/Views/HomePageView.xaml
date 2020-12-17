@@ -3,12 +3,14 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ProjectTemplate.Mobile.Views.HomePageView"
              xmlns:baseviewmodel="clr-namespace:ProjectTemplate.Mobile.ViewModels.Base"
-             baseviewmodel:ViewModelLocator.AutoWireViewModel="True">
+             baseviewmodel:ViewModelLocator.AutoWireViewModel="True"
+             NavigationPage.HasNavigationBar="False">
     <ContentPage.Content>
         <StackLayout>
             <Label Text="Welcome to Xamarin.Forms!"
                 VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+                HorizontalOptions="CenterAndExpand" 
+                   FontSize="Large"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
