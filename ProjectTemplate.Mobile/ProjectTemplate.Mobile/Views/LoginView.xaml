@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProjectTemplate.Mobile.Views.LoginView"
+             xmlns:baseviewmodel="clr-namespace:ProjectTemplate.Mobile.ViewModels.Base"
+             baseviewmodel:ViewModelLocator.AutoWireViewModel="True"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+            <Entry Placeholder="Username" Text="{Binding UsernameText}"/>
+            <Button Text="Login" Command="{Binding Commands[LoginUser]}"/>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,4 +1,5 @@
-﻿using ProjectTemplate.Mobile.ViewModels;
+﻿using ProjectTemplate.Mobile.Services.Settings;
+using ProjectTemplate.Mobile.ViewModels;
 using ProjectTemplate.Mobile.ViewModels.Base;
 using ProjectTemplate.Mobile.Views;
 using System;
@@ -25,8 +26,10 @@ namespace ProjectTemplate.Mobile.Services.Navigation
 
         public Task InitializeAsync()
         {
-            //if(string.IsNullOrWhiteSpace(ViewModelLocator.Resolve<ISettingsService>().AuthLoggedOnUserLanAccount))
-            return NavigateToAsync<HomePageViewModel>();
+            if (string.IsNullOrWhiteSpace(ViewModelLocator.Resolve<ISettingsService>().AuthedUserId))
+                return NavigateToAsync<LoginViewModel>();
+            else
+                return NavigateToAsync<HomeViewModel>();
         }
 
         public Task NavigateToAsync<TViewModel>() where TViewModel : BaseViewModel
@@ -66,7 +69,7 @@ namespace ProjectTemplate.Mobile.Services.Navigation
         private async Task InternalNavigateToAsync(Type viewModelType, object parameter)
         {
             Page page = CreatePage(viewModelType, parameter);
-            if(page is HomePageView)
+            if(page is HomeView)
             {
                 Application.Current.MainPage = new NavigationPage(page);
             }

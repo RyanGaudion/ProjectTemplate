@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="ProjectTemplate.Mobile.Views.HomePageView"
+             x:Class="ProjectTemplate.Mobile.Views.HomeView"
              xmlns:baseviewmodel="clr-namespace:ProjectTemplate.Mobile.ViewModels.Base"
              baseviewmodel:ViewModelLocator.AutoWireViewModel="True"
              NavigationPage.HasNavigationBar="False">
@@ -11,6 +11,8 @@
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" 
                    FontSize="Large"/>
+            <Button
+                    Text="Logout" Command="{Binding Commands[LogoutUser]}"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
