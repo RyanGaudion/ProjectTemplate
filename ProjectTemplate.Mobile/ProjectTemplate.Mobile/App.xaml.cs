@@ -1,4 +1,4 @@
-﻿using ProjectTemplate.Mobile.Services;
+﻿using ProjectTemplate.Mobile.Services.Navigation;
 using ProjectTemplate.Mobile.ViewModels.Base;
 using System;
 using System.Threading.Tasks;

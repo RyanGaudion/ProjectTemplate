@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 
-namespace ProjectTemplate.Mobile.Services
+namespace ProjectTemplate.Mobile.Services.Navigation
 {
     public class NavigationService : INavigationService
     {

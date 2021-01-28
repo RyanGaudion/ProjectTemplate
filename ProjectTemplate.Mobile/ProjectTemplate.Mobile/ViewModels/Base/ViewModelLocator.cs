@@ -1,4 +1,4 @@
-﻿using ProjectTemplate.Mobile.Services;
+﻿using ProjectTemplate.Mobile.Services.Navigation;
 using Singularity;
 using System;
 using System.Collections.Generic;
