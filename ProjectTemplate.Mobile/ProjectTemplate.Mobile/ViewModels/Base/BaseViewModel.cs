@@ -1,4 +1,7 @@
-﻿using System;
+﻿using ProjectTemplate.Mobile.Services.User;
+using ProjectTemplate.Shared.Models;
+using ProjectTemplate.Shared.Models.Base;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
@@ -6,6 +9,7 @@ using System.Windows.Input;
 
 namespace ProjectTemplate.Mobile.ViewModels.Base
 {
+    
     public class BaseViewModel : ObservableObject
     {
         public Dictionary<string, ICommand> Commands { get; protected set; }
@@ -18,7 +22,6 @@ namespace ProjectTemplate.Mobile.ViewModels.Base
             Commands = new Dictionary<string, ICommand>();
         }
 
-        
         public virtual Task InitializeAsync(object navigationData)
         {
             return Task.FromResult(false);

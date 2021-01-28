@@ -4,7 +4,7 @@ using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Text;
 
-namespace ProjectTemplate.Mobile.ViewModels.Base
+namespace ProjectTemplate.Shared.Models.Base
 {
 	/// <summary>
 	/// Observable object with INotifyPropertyChanged implemented
