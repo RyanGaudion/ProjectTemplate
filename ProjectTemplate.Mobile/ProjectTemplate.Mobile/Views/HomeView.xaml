@@ -7,14 +7,12 @@
                           baseviewmodel:ViewModelLocator.AutoWireViewModel="True"
                           NavigationPage.HasNavigationBar="False">   
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" 
+        <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" >
+            <Label Text="{Binding userService.LoggedOnUser.Username, StringFormat='Welcome {0}!'}"
+
                    FontSize="Large"/>
-            <Label FontSize="Large" Text="{Binding userService.LoggedOnUser.Username}"/>
             <Button Text="Logout" Command="{Binding Commands[LogoutUser]}"/>
-            <Button Text="ChangeName" Command="{Binding Commands[ChangeName]}"/>
+            <Button Text="Change Name" Command="{Binding Commands[ChangeName]}"/>
         </StackLayout>
     </ContentPage.Content>
 </baseview:BaseContentPage>
