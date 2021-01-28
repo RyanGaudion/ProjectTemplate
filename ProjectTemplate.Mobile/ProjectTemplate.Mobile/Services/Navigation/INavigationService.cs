@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ProjectTemplate.Mobile.Services
+namespace ProjectTemplate.Mobile.Services.Navigation
 {
     public interface INavigationService
     {
