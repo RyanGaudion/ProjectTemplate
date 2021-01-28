@@ -10,9 +10,9 @@ using Xamarin.Forms.Xaml;
 namespace ProjectTemplate.Mobile.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class HomePageView : ContentPage
+    public partial class HomeView : ContentPage
     {
-        public HomePageView()
+        public HomeView()
         {
             InitializeComponent();
         }
