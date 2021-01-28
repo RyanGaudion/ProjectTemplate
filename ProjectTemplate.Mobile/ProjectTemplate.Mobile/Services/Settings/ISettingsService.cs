@@ -8,7 +8,7 @@ namespace ProjectTemplate.Mobile.Services.Settings
     public interface ISettingsService
     {
         bool UseMocks { get; set; }
-        string AuthedUserId { get; set; }
+        string AuthedUsername { get; set; }
 
         bool GetValueOrDefault(string key, bool defaultValue);
         string GetValueOrDefault(string key, string defaultValue);

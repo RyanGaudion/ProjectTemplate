@@ -1,5 +1,6 @@
 ﻿using ProjectTemplate.Mobile.Services.Navigation;
 using ProjectTemplate.Mobile.Services.Settings;
+using ProjectTemplate.Mobile.Services.User;
 using Singularity;
 using System;
 using System.Collections.Generic;
@@ -36,6 +37,7 @@ namespace ProjectTemplate.Mobile.ViewModels.Base
                 //Services
                 builder.Register<INavigationService, NavigationService>(c => c.With(Lifetimes.PerContainer));
                 builder.Register<ISettingsService, SettingsService>(c => c.With(Lifetimes.PerContainer));
+                builder.Register<IUserService, UserService>(c => c.With(Lifetimes.PerContainer));
             });
         }
 

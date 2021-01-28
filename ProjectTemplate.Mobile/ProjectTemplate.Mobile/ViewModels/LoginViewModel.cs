@@ -1,5 +1,6 @@
 ﻿using ProjectTemplate.Mobile.Services.Navigation;
 using ProjectTemplate.Mobile.Services.Settings;
+using ProjectTemplate.Mobile.Services.User;
 using ProjectTemplate.Mobile.ViewModels.Base;
 using System;
 using System.Collections.Generic;
@@ -13,11 +14,11 @@ namespace ProjectTemplate.Mobile.ViewModels
     {
         #region constructor
         INavigationService navigationService;
-        ISettingsService settingsService;
-        public LoginViewModel(INavigationService _navigationService, ISettingsService _settingsService)
+        IUserService userService;
+        public LoginViewModel(INavigationService _navigationService, IUserService _userService)
         {
             navigationService = _navigationService;
-            settingsService = _settingsService;
+            userService = _userService;
 
             Commands.Add("LoginUser", new Command(async () => await LoginUserAsync()));
         }
@@ -38,9 +39,11 @@ namespace ProjectTemplate.Mobile.ViewModels
         {
             if (!string.IsNullOrWhiteSpace(UsernameText))
             {
-                settingsService.AuthedUserId = UsernameText;
-                await navigationService.NavigateToAsync<HomeViewModel>();
-                await navigationService.RemoveBackStackAsync();
+                if(userService.Login(UsernameText, string.Empty))
+                {
+                    await navigationService.NavigateToAsync<HomeViewModel>();
+                    await navigationService.RemoveBackStackAsync();
+                }
             }
         }
         #endregion

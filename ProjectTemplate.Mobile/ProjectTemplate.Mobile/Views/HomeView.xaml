@@ -1,18 +1,20 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="ProjectTemplate.Mobile.Views.HomeView"
-             xmlns:baseviewmodel="clr-namespace:ProjectTemplate.Mobile.ViewModels.Base"
-             baseviewmodel:ViewModelLocator.AutoWireViewModel="True"
-             NavigationPage.HasNavigationBar="False">
+<baseview:BaseContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+                          xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                          x:Class="ProjectTemplate.Mobile.Views.HomeView"
+                          xmlns:baseview="clr-namespace:ProjectTemplate.Mobile.Views.Base"
+                          xmlns:baseviewmodel="clr-namespace:ProjectTemplate.Mobile.ViewModels.Base"
+                          baseviewmodel:ViewModelLocator.AutoWireViewModel="True"
+                          NavigationPage.HasNavigationBar="False">   
     <ContentPage.Content>
         <StackLayout>
             <Label Text="Welcome to Xamarin.Forms!"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" 
                    FontSize="Large"/>
-            <Button
-                    Text="Logout" Command="{Binding Commands[LogoutUser]}"/>
+            <Label FontSize="Large" Text="{Binding userService.LoggedOnUser.Username}"/>
+            <Button Text="Logout" Command="{Binding Commands[LogoutUser]}"/>
+            <Button Text="ChangeName" Command="{Binding Commands[ChangeName]}"/>
         </StackLayout>
     </ContentPage.Content>
-</ContentPage>
+</baseview:BaseContentPage>

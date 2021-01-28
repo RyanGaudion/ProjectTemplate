@@ -1,4 +1,5 @@
 ﻿using ProjectTemplate.Mobile.Services.Settings;
+using ProjectTemplate.Mobile.Services.User;
 using ProjectTemplate.Mobile.ViewModels;
 using ProjectTemplate.Mobile.ViewModels.Base;
 using ProjectTemplate.Mobile.Views;
@@ -26,10 +27,16 @@ namespace ProjectTemplate.Mobile.Services.Navigation
 
         public Task InitializeAsync()
         {
-            if (string.IsNullOrWhiteSpace(ViewModelLocator.Resolve<ISettingsService>().AuthedUserId))
+            string authedUsername = ViewModelLocator.Resolve<ISettingsService>().AuthedUsername;
+            if (string.IsNullOrWhiteSpace(authedUsername)){
                 return NavigateToAsync<LoginViewModel>();
+            }
             else
+            {
+                ViewModelLocator.Resolve<IUserService>().Login(authedUsername, string.Empty);
                 return NavigateToAsync<HomeViewModel>();
+            }
+                
         }
 
         public Task NavigateToAsync<TViewModel>() where TViewModel : BaseViewModel

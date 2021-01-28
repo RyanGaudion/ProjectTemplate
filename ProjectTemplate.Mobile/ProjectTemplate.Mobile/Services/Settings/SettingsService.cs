@@ -10,10 +10,10 @@ namespace ProjectTemplate.Mobile.Services.Settings
     {
         #region Setting Constants
         private const string IdUseMocks = "use_mocks";
-        private const string IDAuthedUserID = "authed_user_id";
+        private const string IDAuthedUsername = "authed_user_id";
 
         private readonly bool UseMocksDefault = true;
-        private readonly string AuthedUserIDDefault = string.Empty;
+        private readonly string AuthedUsernameDefault = string.Empty;
         #endregion
 
         #region Settings Properties
@@ -23,10 +23,10 @@ namespace ProjectTemplate.Mobile.Services.Settings
             set => AddOrUpdateValue(IdUseMocks, value);
         }
 
-        public string AuthedUserId
+        public string AuthedUsername
         {
-            get => GetValueOrDefault(IDAuthedUserID, AuthedUserIDDefault);
-            set => AddOrUpdateValue(IDAuthedUserID, value);
+            get => GetValueOrDefault(IDAuthedUsername, AuthedUsernameDefault);
+            set => AddOrUpdateValue(IDAuthedUsername, value);
         }
         #endregion
 
