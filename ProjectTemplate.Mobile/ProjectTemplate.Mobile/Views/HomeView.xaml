@@ -13,6 +13,7 @@
                    FontSize="Large"/>
             <Button Text="Logout" Command="{Binding Commands[LogoutUser]}"/>
             <Button Text="Change Name" Command="{Binding Commands[ChangeName]}"/>
+            <Label Text="&#xf0c9;" FontFamily="FASolid"/>
         </StackLayout>
     </ContentPage.Content>
 </baseview:BaseContentPage>

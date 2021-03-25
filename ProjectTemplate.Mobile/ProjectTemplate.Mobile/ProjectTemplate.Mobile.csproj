@@ -11,9 +11,21 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Acr.UserDialogs" Version="7.1.0.475" />
+    <None Remove="Resources\Fonts\FontAwesome5BrandsReg400.otf" />
+    <None Remove="Resources\Fonts\FontAwesome5FreeReg400.otf" />
+    <None Remove="Resources\Fonts\FontAwesome5FreeSolid900.otf" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Fonts\FontAwesome5BrandsReg400.otf" />
+    <EmbeddedResource Include="Resources\Fonts\FontAwesome5FreeReg400.otf" />
+    <EmbeddedResource Include="Resources\Fonts\FontAwesome5FreeSolid900.otf" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Acr.UserDialogs" Version="7.1.0.483" />
     <PackageReference Include="Singularity" Version="0.18.0" />
-    <PackageReference Include="Xamarin.Forms" Version="5.0.0.1931" />
+    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2012" />
     <PackageReference Include="Xamarin.Essentials" Version="1.6.1" />
   </ItemGroup>
 
